@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Article component renders Article 1`] = `
+<DocumentFragment>
+  <h2>
+    There is no title for some reason...
+  </h2>
+  <h3>
+    By Unknown Author
+  </h3>
+  <h3>
+    No description available.
+  </h3>
+</DocumentFragment>
+`;
