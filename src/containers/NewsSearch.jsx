@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ArticleList from '../components/articles/ArticleList';
 import Search from '../components/search/Search';
 import { getSearchedArticles, getTopHeadlines } from '../services/news-utils';
+import './NewsSearch.css';
 
 export default class NewsSearch extends Component {
   state = {
@@ -32,7 +33,7 @@ export default class NewsSearch extends Component {
     if(loading) return <h1>Loading...</h1>;
 
     return (
-      <>
+      <div>
         <h1>Daily Tribune</h1>
         <Search 
           search={search}
@@ -40,11 +41,11 @@ export default class NewsSearch extends Component {
           onSubmit={this.handleSubmit}
         />
         {initialLoad
-          ? <h2>Top Headlines</h2>
-          : <h2>Here's your search results for '{search}':</h2>
+          ? <h1>Top Headlines</h1>
+          : <h1>Here's your search results for '{search}':</h1>
         }
         <ArticleList search={search} articles={articles}/>
-      </>
+      </div>
     );
   }
 }
