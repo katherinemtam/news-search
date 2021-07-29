@@ -3,20 +3,19 @@ import PropTypes from 'prop-types';
 import Article from './Article';
 
 const ArticleList = ({ articles }) => {
-
-  const articleElements = articles.map(article => (
-    <li key={article.title}>
-      <Article
-        title={article.title}
-        author={article.author}
-        description={article.description}
-      />
-    </li>
-  ));
-
-  return <ul>{articleElements}</ul>;
+  if(articles) {
+    const articleElements = articles.map(article => (
+      <li key={article.title}>
+        <Article
+          title={article.title}
+          author={article.author}
+          description={article.description}
+        />
+      </li>
+    ));
+    return <ul>{articleElements}</ul>;
+  } return <ul>Sorry! Something went wrong...</ul>;
 };
-
 ArticleList.propTypes = {
   articles: PropTypes.arrayOf(
     PropTypes.shape({
@@ -24,7 +23,7 @@ ArticleList.propTypes = {
       author: PropTypes.string,
       description: PropTypes.string
     })
-  ).isRequired,
+  ),
 };
 
 export default ArticleList;
